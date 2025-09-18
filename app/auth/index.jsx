@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#e6dcdcff", // ✅ Black background
+    backgroundColor: "#ffffffff", // ✅ Black background
   },
   card: {
     backgroundColor: "#e4dcdcff", // ✅ Dark card background
