@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     color: "#000000ff", // ✅ White text
   },
   button: {
-    backgroundColor: "#000000ff", // ✅ Yellow button
+    backgroundColor: "#c0b9b9ff", // ✅ Yellow button
     borderRadius: 30,
     paddingVertical: 14,
     width: "80%",
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonText: {
-    color: "#ffffffff", // ✅ Black text inside yellow button
+    color: "#2b2929ff", // ✅ Black text inside yellow button
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -220,11 +220,11 @@ const styles = StyleSheet.create({
     color: "#000000ff", // ✅ White text inside input
   },
   backButton: {
-    backgroundColor: "#000000ff",
+    backgroundColor: "#c0b9b9ff",
     borderWidth: 1,
-    borderColor: "#000000ff",
+    borderColor: "#d6d3d3ff",
   },
   backButtonText: {
-    color: "#fafafaff",
+    color: "#000000ff",
   },
 });

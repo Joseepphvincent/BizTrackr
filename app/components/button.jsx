@@ -1,37 +1,26 @@
-// app/components/button.jsx
-import { Pressable, Text, StyleSheet } from "react-native";
+// components/button.jsx
+import React from "react";
+import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export function Button({ children, onPress }) {
+export function Button({ children, style, textStyle, onPress }) {
   return (
-    <Pressable
-      onPress={onPress}
-      style={({ pressed }) => [
-        styles.button,
-        pressed && { opacity: 0.8, transform: [{ scale: 0.98 }] },
-      ]}
-    >
-      <Text style={styles.text}>{children}</Text>
-    </Pressable>
+    <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+      <Text style={[styles.text, textStyle]}>{children}</Text>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#070707ff",
-    borderRadius: 9999,
-    paddingVertical: 16,
+    backgroundColor: "#007AFF",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
     alignItems: "center",
-    justifyContent: "center",
-    marginVertical: 8,
-    width: "80%",
-    shadowColor: "#000",
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    elevation: 4,
   },
   text: {
-    fontSize: 18,
-    fontWeight: "bold",
     color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

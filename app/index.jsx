@@ -38,7 +38,7 @@ export default function GetStartedUI() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e6dcdcff", // ✅ Changed from black to white
+    backgroundColor: "#e9e5e5ff", // ✅ Changed from black to white
     justifyContent: "center",
     alignItems: "center",
     padding: 24,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 16,
-    color: "#333",
+    color: "#000000ff",
     textAlign: "center",
   },
   buttonWrapper: {
