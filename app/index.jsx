@@ -1,45 +1,36 @@
 // app/index.jsx
-import { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { Button } from "./components/button";
 import { useRouter } from "expo-router";
 
-export default function Login() {
+export default function GetStartedUI() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    if (email === "test@example.com" && password === "1234") {
-      router.replace("/goals");
-    } else {
-      alert("Invalid email or password!");
-    }
-  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
+      {/* Title & Subtitle ABOVE the card */}
+      <View style={styles.header}>
+        <Text style={styles.title}>Welcome to XPNSTRACKR</Text>
+        <Text style={styles.subtitle}>
+          Your ready-to-use payment & expense management platform.
+        </Text>
+      </View>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
+      {/* Card or decorative area */}
+      <View style={styles.card}>
+        <Text style={styles.cardText}>Track your balance, expenses, and goals!</Text>
+      </View>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
+     <View style={styles.buttonWrapper}>
+  <Button 
+    onPress={() => router.push("/auth")}
+    style={{ backgroundColor: "black" }}
+    textStyle={{ color: "white" }}
+  >
+    Get Started
+  </Button>
+</View>
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -47,32 +38,46 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#e6dcdcff", // ✅ Changed from black to white
     justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fff",
+    alignItems: "center",
+    padding: 24,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    marginBottom: 30,
-    textAlign: "center",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    padding: 12,
-    marginBottom: 15,
-    borderRadius: 8,
-  },
-  button: {
-    backgroundColor: "#21cc8d",
-    padding: 15,
-    borderRadius: 8,
+  header: {
+    marginBottom: 24,
     alignItems: "center",
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
+  title: {
+    fontSize: 28,
     fontWeight: "bold",
+    color: "black", // ✅ Changed from white to black for better contrast
+    textAlign: "center",
+  },
+  subtitle: {
+    fontSize: 16,
+    color: "#555", // ✅ Softer gray for readability on white
+    marginTop: 8,
+    textAlign: "center",
+  },
+  card: {
+    backgroundColor: "#e6dcdcff",
+    borderRadius: 24,
+    width: 360,
+    padding: 32,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 6,
+    alignItems: "center",
+    marginBottom: 32,
+  },
+  cardText: {
+    fontSize: 16,
+    color: "#333",
+    textAlign: "center",
+  },
+  buttonWrapper: {
+    width: "100%",
+    alignItems: "center",
   },
 });
